@@ -89,5 +89,59 @@ namespace mobileShopMain
             populate();
 
         }
+
+        private void Stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pId.Text = Stock.SelectedRows[0].Cells[0].Value.ToString();
+            pCat.SelectedItem = Stock.SelectedRows[0].Cells[1].Value.ToString();
+            pName.Text = Stock.SelectedRows[0].Cells[2].Value.ToString();
+            pDes.Text = Stock.SelectedRows[0].Cells[3].Value.ToString();
+            pPrice.Text = Stock.SelectedRows[0].Cells[4].Value.ToString();
+            pBrand.Text = Stock.SelectedRows[0].Cells[5].Value.ToString();
+            pStock.Text = Stock.SelectedRows[0].Cells[6].Value.ToString();
+           
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (pCat.Text == "" || pId.Text == "" || pName.Text == "")
+            {
+                MessageBox.Show("missing information");
+            }
+
+            else
+            {
+                try
+                {
+                    con.Open();
+                    String sql = "update products set pStock='"+pStock.Text+"' where pId='"+ pId.Text+ "';";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("PRODUCT UPDATED SUCCESSFULLY");
+                    con.Close();
+                    populate();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                con.Close();
+
+            }
+        }
+
+        private void DelBtn_Click(object sender, EventArgs e)
+        {
+            pId.Text = "";
+            pCat.Text = "";
+            pName.Text = "";
+            pDes.Text = "";
+            pPrice.Text = "";
+            pBrand.Text = "";
+            pStock.Text = "";
+
+        }
     }
 }

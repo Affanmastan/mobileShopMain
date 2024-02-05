@@ -233,21 +233,23 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(406, 222);
+            this.UpdateBtn.Location = new System.Drawing.Point(419, 222);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateBtn.TabIndex = 19;
             this.UpdateBtn.Text = "UPDATE";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // DelBtn
             // 
-            this.DelBtn.Location = new System.Drawing.Point(533, 227);
+            this.DelBtn.Location = new System.Drawing.Point(540, 222);
             this.DelBtn.Name = "DelBtn";
             this.DelBtn.Size = new System.Drawing.Size(75, 23);
             this.DelBtn.TabIndex = 20;
-            this.DelBtn.Text = "DELETE";
+            this.DelBtn.Text = "CLEAR";
             this.DelBtn.UseVisualStyleBackColor = true;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
             // label11
             // 
@@ -262,11 +264,16 @@
             // 
             // Stock
             // 
+            this.Stock.BackgroundColor = System.Drawing.Color.Gray;
+            this.Stock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Stock.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.Stock.Location = new System.Drawing.Point(1, 290);
             this.Stock.Name = "Stock";
+            this.Stock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Stock.Size = new System.Drawing.Size(687, 150);
             this.Stock.TabIndex = 22;
+            this.Stock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Stock_CellContentClick);
             // 
             // Form1
             // 
