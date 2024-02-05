@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace mobileShopMain
 {
@@ -16,6 +17,7 @@ namespace mobileShopMain
         {
             InitializeComponent();
         }
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\SAMSUNG\Documents\MobileShopDb.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -29,6 +31,62 @@ namespace mobileShopMain
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void populate()
+        {
+            con.Open();
+            string query = "select * from products";
+            SqlDataAdapter da=new SqlDataAdapter(query, con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            Stock.DataSource = ds.Tables[0];
+            con.Close();
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            if(pCat.Text=="" || pId.Text=="" || pName.Text=="")
+            {
+                MessageBox.Show("missing information");
+            }
+
+            else
+            {
+                try
+                {
+                    con.Open();
+                    String sql = "insert into products values('"+pId.Text+"','"+pCat.SelectedItem.ToString()+"','"+pName.Text+"','"+pDes.Text+"','"+pPrice.Text+"','"+pBrand.Text+"','"+pStock.Text+"') ";
+                    SqlCommand cmd =new SqlCommand(sql,con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("PRODUCT ADDED SUCCESSFULLY");
+                    con.Close();
+                    populate();
+
+                }
+                catch(Exception ex) 
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                con.Close();
+
+            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            populate();
 
         }
     }

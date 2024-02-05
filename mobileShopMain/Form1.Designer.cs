@@ -32,23 +32,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pCat = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pId = new System.Windows.Forms.TextBox();
+            this.pName = new System.Windows.Forms.TextBox();
+            this.pDes = new System.Windows.Forms.TextBox();
+            this.pPrice = new System.Windows.Forms.TextBox();
+            this.pBrand = new System.Windows.Forms.TextBox();
+            this.pStock = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.DelBtn = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Stock = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,16 +99,16 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Catergory";
             // 
-            // comboBox1
+            // pCat
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.pCat.FormattingEnabled = true;
+            this.pCat.Items.AddRange(new object[] {
             "Mobile",
             "Accessories"});
-            this.comboBox1.Location = new System.Drawing.Point(117, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.pCat.Location = new System.Drawing.Point(117, 108);
+            this.pCat.Name = "pCat";
+            this.pCat.Size = new System.Drawing.Size(121, 21);
+            this.pCat.TabIndex = 4;
             // 
             // label5
             // 
@@ -167,47 +170,47 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Stock";
             // 
-            // textBox1
+            // pId
             // 
-            this.textBox1.Location = new System.Drawing.Point(372, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.pId.Location = new System.Drawing.Point(372, 109);
+            this.pId.Name = "pId";
+            this.pId.Size = new System.Drawing.Size(100, 20);
+            this.pId.TabIndex = 11;
             // 
-            // textBox2
+            // pName
             // 
-            this.textBox2.Location = new System.Drawing.Point(562, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
+            this.pName.Location = new System.Drawing.Point(562, 109);
+            this.pName.Name = "pName";
+            this.pName.Size = new System.Drawing.Size(100, 20);
+            this.pName.TabIndex = 12;
             // 
-            // textBox3
+            // pDes
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 166);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.pDes.Location = new System.Drawing.Point(128, 166);
+            this.pDes.Name = "pDes";
+            this.pDes.Size = new System.Drawing.Size(100, 20);
+            this.pDes.TabIndex = 13;
             // 
-            // textBox4
+            // pPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(372, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 14;
+            this.pPrice.Location = new System.Drawing.Point(372, 169);
+            this.pPrice.Name = "pPrice";
+            this.pPrice.Size = new System.Drawing.Size(100, 20);
+            this.pPrice.TabIndex = 14;
             // 
-            // textBox5
+            // pBrand
             // 
-            this.textBox5.Location = new System.Drawing.Point(562, 170);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
+            this.pBrand.Location = new System.Drawing.Point(562, 170);
+            this.pBrand.Name = "pBrand";
+            this.pBrand.Size = new System.Drawing.Size(100, 20);
+            this.pBrand.TabIndex = 15;
             // 
-            // textBox6
+            // pStock
             // 
-            this.textBox6.Location = new System.Drawing.Point(128, 229);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 16;
+            this.pStock.Location = new System.Drawing.Point(128, 229);
+            this.pStock.Name = "pStock";
+            this.pStock.Size = new System.Drawing.Size(100, 20);
+            this.pStock.TabIndex = 16;
             // 
             // panel1
             // 
@@ -226,6 +229,7 @@
             this.AddBtn.TabIndex = 18;
             this.AddBtn.Text = "ADD";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -245,29 +249,50 @@
             this.DelBtn.Text = "DELETE";
             this.DelBtn.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(642, 480);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 16);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "->";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // Stock
+            // 
+            this.Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Stock.Location = new System.Drawing.Point(1, 290);
+            this.Stock.Name = "Stock";
+            this.Stock.Size = new System.Drawing.Size(687, 150);
+            this.Stock.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(700, 500);
+            this.Controls.Add(this.Stock);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.DelBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pStock);
+            this.Controls.Add(this.pBrand);
+            this.Controls.Add(this.pPrice);
+            this.Controls.Add(this.pDes);
+            this.Controls.Add(this.pName);
+            this.Controls.Add(this.pId);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pCat);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,6 +301,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Stock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,23 +314,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox pCat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox pId;
+        private System.Windows.Forms.TextBox pName;
+        private System.Windows.Forms.TextBox pDes;
+        private System.Windows.Forms.TextBox pPrice;
+        private System.Windows.Forms.TextBox pBrand;
+        private System.Windows.Forms.TextBox pStock;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button DelBtn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView Stock;
     }
 }
 
