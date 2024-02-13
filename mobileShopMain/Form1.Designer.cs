@@ -1,4 +1,4 @@
-﻿namespace mobileShopMain
+﻿namespace MobileShopCreditMS
 {
     partial class Form1
     {
